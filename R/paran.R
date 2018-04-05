@@ -98,19 +98,14 @@ library(MASS)
       cat("\nComputing: ")
       }
     }
+ 
+  #intialize progress bar
+  pb <- txtProgressBar(title="progress paran", label="0% done", min=0, max=100, initial=0, style=3)
 
   for (k in 1:iterations) {
-   
-# Yet _more_ letting the user know the program is working!
-    if (status == TRUE) {
-      if (k %% (iterations/10) == 1 & iterations >= 10 & k > 1) {
-        pct <- (k%/%(iterations/10))*10
-        cat(pct,"%  ",sep="")
-        }
-      if (k == iterations) {
-        cat("100%\n")
-        }
-      }
+ # update progress bar
+     a <- (round(k/iterations, digits = 2)*100)
+     setTxtProgressBar(pb, a)
 
 # initialize previously created random dataset.
     Sim <- matrix(NA,N,P)
@@ -142,6 +137,8 @@ library(MASS)
 
 # end the for k loop
   }
+  
+  close(pb)
 
 # display if neccesary
   if (quietly == TRUE) {
