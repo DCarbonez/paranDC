@@ -1,11 +1,11 @@
-pkgname <- "paran"
+pkgname <- "paranDC"
 source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
-library('paran')
+library('paranDC')
 
 assign(".oldSearch", search(), pos = 'CheckExEnv')
 cleanEx()
-nameEx("paran")
+nameEx("paranDC")
 ### * paran
 
 flush(stderr()); flush(stdout())
