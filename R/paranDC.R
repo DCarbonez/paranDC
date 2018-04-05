@@ -103,9 +103,7 @@ library(MASS)
   pb <- txtProgressBar(title="progress paran", label="0% done", min=0, max=100, initial=0, style=3)
 
   for (k in 1:iterations) {
- # update progress bar
-     a <- (round(k/iterations, digits = 2)*100)
-     setTxtProgressBar(pb, a)
+
 
 # initialize previously created random dataset.
     Sim <- matrix(NA,N,P)
@@ -134,6 +132,10 @@ library(MASS)
 
 # Save eigenvalues
     SimEvs[k,] <- Evs
+
+# update progress bar
+    a <- (round(k/iterations, digits = 2)*100)
+    setTxtProgressBar(pb, a)
 
 # end the for k loop
   }
