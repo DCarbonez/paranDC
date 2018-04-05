@@ -1,4 +1,4 @@
-`paran` <-
+`paranDC` <-
 function(x=NA, iterations=0, centile=0, quietly=FALSE, status=TRUE, all=FALSE, cfa=FALSE, graph=FALSE, color=TRUE, col=c("black","red","blue"), lty=c(1,2,3), lwd=1, legend=TRUE, file="", width=640, height=640, grdevice="png", seed=0, mat=NA, n=NA) {
 
 library(MASS)
